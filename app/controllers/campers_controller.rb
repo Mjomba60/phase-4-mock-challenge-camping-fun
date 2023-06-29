@@ -26,6 +26,6 @@ class CampersController < ApplicationController
     end
 
     def render_invalid_record_response(invalid)
-        render json: {errors: invalid.record.errors}, status: :unprocessable_entity
+        render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
     end
 end
